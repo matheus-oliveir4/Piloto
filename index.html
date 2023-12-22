@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esboço Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <header><h1>
+        Analisado de criterios
+    </h1></header>
+    <main>
+        <h2>Não-conformidades</o-conformidades></h2>
+        <h3>Rugas - Longitudinais</h3>
+
+        <form name="form1" method="post">
+            <section id="sev0">
+                <input type="radio"  name="criterio" id="rugsev0" required>
+                <label for="rugsev0"> Regiões de colagem: ≤2 mm <br>
+                    Foras de área de colagem: ≤5 mm
+                    <strong>E</strong> <br>
+                    Ruga sem sinais de trincas ou delaminações</label>
+            </section>
+            <br>
+            <section id="sev1">
+                <input type="radio" name="criterio" id="rugsev1" required>
+            <label for="rugsev1"> Pás eólicas com mais de 1 ano de operação  
+                <strong>E</strong> <br>
+                Ruga sem sinais de trincas ou delaminações</label>
+            </section>
+            <br>
+            <section id="sev3">
+                <input type="radio" name="criterio" id="rugsev3" required>
+            <label for="rugsev3">Pás eólicas com menos de 1 ano de operação
+                <strong>E</strong> <br>
+                Tamanho da ruga: ≤300 mm 
+                <strong>OU</strong> <br>
+                Ruga com sinais de trincas ou delaminaçõe</label>
+            </section >
+            <br>
+            <section id="sev4">
+                <input type="radio" name="criterio" id="rugsev2" required>
+            <label for="rugsev2">Pás eólicas com mais de 1 ano de operação 
+                <strong>E</strong><br>
+                Tamanho da ruga: ≤300 mm
+                <strong>E</strong><br>
+                Ruga com sinais de trincas ou delaminações</label>
+            </section >
+            <br>
+            <section id="sev5">
+                <input type="radio"  name="criterio" id="rugsev4" required>
+                <label for="rugsev4">Ruga com sinais de trincas ou delaminações
+                    <strong>E</strong> <br>
+                    Tamanho da ruga: ≤300 mm
+                    <strong>E</strong> <br>
+                    Não é visivel sinal de luz passante do lado externo</label>
+            </section >
+            <br>
+            <section>
+                <input type="radio" name="criterio" id="rugsev5" required>
+                <label for="rugsev5">Ruga com sinais de trincas ou delaminações
+                    <strong>E</strong> <br>
+                    Tamanho da ruga: ≥ 300 mm
+                    <strong>OU</strong> <br>
+                    É visivel sinal de luz passante do lado externo</label>
+            </section>
+        </form>
+       
+        <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
+        <div id="laudo"> Severidade proposta</div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
