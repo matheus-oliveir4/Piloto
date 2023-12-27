@@ -6,15 +6,44 @@
     <title>Esboço Book</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body >
+<body>
     <header><h1>
-        Analisador de criterios
-    </h1></header>
+        Analisador de criterios</h1>
+        <select name="defeitos" id="txtdefeitos" onclick="selected(this.value)">
+            <option selected>Não conformidades</option>
+            <option value=""><p>Rugas - Longitudinal</p></option>
+            <option value="Rugas - Transversal"><p>Rugas - Transversal</p></option>
+            <option value=""><p>Rugas - Almas</p></option>
+            <option value=""><p>Gap ou Ausência de Core - Cascas e Almas</p></option>
+            <option value=""><p>Degrau - Cascas</p></option>
+            <option value=""><p>Tecido Seco na superfície - Cascas</p></option>
+            <option value=""><p>Tecido Semi-Seco - Cascas e Almas</p></option>
+            <option value=""><p>Bolhas - Casca</p></option>
+            <option value=""><p>Corpo Estranho - Cascas e área de colagem (para laminados infudidos ou áreas de colagem)			</p></option>
+            <option value=""><p>Trincas transversais - Cascas e Almas</p></option>
+            <option value=""><p>Trincas Longitudinais - Cascas e Almas</p></option>
+            <option value=""><p>Trincas Transversais - linhas de colagem</p></option>
+            <option value=""><p>Trincas Longitudinais - linhas de colagem</p></option>
+            <option value=""><p>Descolamentos  - Danos na alma/T-pultrudado</p></option>
+            <option value=""><p>Trincas - Inserto do BF</p></option>
+            <option value=""><p>Linhas de colagem - BA/BF</p></option>
+            <option value=""><p>Vazio área de colagem ou Squeeze Out Pobre -Almas	</p></option>
+            <option value=""><p>Vazio área de colagem - Pestanas BA e BF - até 2.000 mm da face da raiz	</p></option>
+            <option value=""><p>Materiais soltos em geral - Interno da pá	</p></option>
+            <option value=""><p>Delaminações - Cascas e Almas	</p></option>
+            <option value=""><p>Delaminações - T-pultrudado	</p></option>
+            <option value=""><p>LPS/LCTU - Root Chamber	</p></option>
+            <option value=""><p>Danos ocasionados por raios/queimados/Flashover	</p></option>
+            <option value=""><p>Camada rompida devido lixamento ou remoção de nylon	</p></option>
+            <option value=""><p>Furos no laminado - Casca	</p></option>
+            <option value=""><p>Furos no laminado - Inserto do BF	</p></option>
+            <option value=""><p>Ausência de camada (Preform) - LE/TE - Casca	</p></option>
+            <option value=""><p>Camada contaminada	</p></option>    
+        </select>
+    </header>
     <main>
-        <h2>Não-conformidades</o-conformidades></h2>
-        <h3>Rugas - Transversais</h3>
-
-        <form name="form1" method="post">
+        <form name="form1" id="form1" method="post" class="form1">
+            <h3>Rugas - Transversais</h3>
             <section id="sev0">
                 <h3>Em qual região a ruga se encontra?</h3>
                 <input type="radio"  name="regiao" id="txtregiao" required>

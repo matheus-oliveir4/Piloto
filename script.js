@@ -1,3 +1,12 @@
+function selected(value){
+   var formRugasT = document.getElementsByClassName('form1')
+   if(value =="Rugas - Transversal" ){
+      formRugasT[0].style.display = 'block'
+   } else{
+      formRugasT[0].style.display = 'none'
+   }
+}
+
 function carregar(){
     var fregiao = document.getElementsByName('regiao')
     var faltura = document.getElementsByName('altura')
@@ -5,8 +14,8 @@ function carregar(){
     var ftempo = document.getElementsByName('operacao')
     var ftam = document.getElementsByName('tamanho')
     var fluz = document.getElementsByName('luz')
-
     var laudo = document.getElementById('laudo')
+
  if(fregiao[1].checked && faltura[0].checked ){
     laudo.innerHTML = `Severidade 0` 
  } else if(faltura[0].checked && fprop[1].checked){
