@@ -9,10 +9,10 @@
 <body>
     <header><h1>
         Analisador de criterios</h1>
-        <select name="defeitos" id="txtdefeitos" onclick="selected(this.value)">
-            <option selected>Não conformidades</option>
+        <select name="defeitos" id="txtdefeitos" class="selectAll" onclick="selected(this.value)">
+            <option value="Não conformidades" selected>Não conformidades</option>
             <option value="Rugas - Longitudinal"><p>Rugas - Longitudinal</p></option>
-            <option value="Rugas - Transversal"><p>Rugas - Transversal</p></option>
+            <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
             <option value="Rugas - Almas"><p>Rugas - Almas</p></option>
             <option value="Gap ou Ausência de Core - Cascas e Almas"><p>Gap ou Ausência de Core - Cascas e Almas</p></option>
             <option value="Degrau - Cascas"><p>Degrau - Cascas</p></option>
@@ -42,9 +42,8 @@
         </select>
     </header>
     <main>
-        <form name="form1" id="form1" method="post" class="form1">
-            <h3>Rugas - Transversais</h3>
-            <section id="sev0">
+        <form name="form1" id="form1" method="post" class="form1">  
+            <section id="sev0" class="SecRegiao">
                 <h3>Em qual região a ruga se encontra?</h3>
                 <input type="radio"  name="regiao" id="txtregiao" required>
                 <label for="txtregiao"> Na área de colagem </label>
@@ -53,7 +52,7 @@
                 <label for="txtregiao1"> Fora da area de colagem</label>
             </section>
           
-            <section id="sev0">
+            <section id="sev0" class="SecAltura">
                 <h3>Qual altura da ruga?</h3>
                 <input type="radio"  name="altura" id="txtaltura" required>
                 <label for="txtaltura">Menor que 2mm </label>
@@ -61,7 +60,7 @@
                 <input type="radio"  name="altura" id="txtaltura1" required>
                 <label for="txtaltura1">Maior que 2mm</label>
             </section>
-            <section id="sev0">
+            <section id="sev0" class="SecSinais">
                 <h3>Existem  sinais de trincas ou delaminações?</h3>
                 <input type="radio"  name="propagacao" id="txtprop" required>
                 <label for="txtprop">Com sinais</label>
@@ -69,16 +68,16 @@
                 <input type="radio"  name="propagacao" id="txtprop1" required>
                 <label for="txtprop1">Sem sinais</label>
             </section>
-            <section id="sev0">
+            <section id="sev0" class="SecTempo">
                 <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao" id="txttempo" required>
+                <input type="radio"  name="operacao" id="txttempo">
                 <label for="txttempo">Maior que 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao" id="txttempo1" required>
+                <input type="radio"  name="operacao" id="txttempo1">
                 <label for="txttempo1">Menor que 1 ano</label>
             </section>
           
-            <section id="sev0">
+            <section id="sev0" class="SecTamanho">
                 <h3>Qual o tamanho da ruga</h3>
                 <input type="radio"  name="tamanho" id="txttamanho" required>
                 <label for="txttamanho"> Menor ou igual a 300mm</label>
@@ -87,7 +86,7 @@
                 <label for="txttamanho1">Maior que 300mm</label>
             </section>
           
-            <section id="sev0">
+            <section id="sev0" class="SecLuz">
                 <h3>Existe luz passante ?</h3>
                 <input type="radio"  name="luz" id="txtluz" required>
                 <label for="txtluz">Com luz possante</label>
@@ -97,21 +96,30 @@
             </section>
       <br>
                </section>
-        </form>
-        
+            </form>
+     
+       
 
 
         <form name="form2" id="form2" method="post" class="form2">
-            <section id="sev2.1">
-                <h3>Tempo de operação?</h3>
-                <input type="radio"  name='operacao1' id="txtempo" required>
-                <label for="txtempo">Maior que 1 ano</label>
+            <section id="sev0">
+                <h3>Qual tempo de operação da pá?</h3>
+                <input type="radio"  name="operacao" id="txttempo" required>
+                <label for="txttempo1.1">Maior que 1 ano</label>
                 <br>
-                <input type="radio"  name="operacao1" id="txtempo1" required>
-                <label for="txtempo1">Menor que 1 ano</label>
+                <input type="radio"  name="operacao" id="txttempo" required>
+                <label for="txttempo">Menor que 1 ano</label>
+            </section>
+    
+            <section id="sev0">
+                <h3>Existem  sinais de trincas ou delaminações?</h3>
+                <input type="radio"  name="propagacao" id="txtprop1.1" required>
+                <label for="txtprop1.1">Com sinais</label>
+                <br>
+                <input type="radio"  name="propagacao" id="txtprop1.2" required>
+                <label for="txtprop1.2">Sem sinais</label>
             </section>
         </form>
-
 
 
         <input type="submit" id="analisar" value="Analisar" onclick="carregar()">

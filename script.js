@@ -1,25 +1,32 @@
 /*Função para selecionar critério desejado*/
 function selected(value){
    var formRugasT = document.getElementsByClassName('form1')
-   if(value =="Rugas - Transversal" ){
+   var formCamada = document.getElementsByClassName('form2')
+   if(value == "Rugas - Transversais"){
       formRugasT[0].style.display = 'block'
-   } else{
+   } else if(value == "Camada contaminada"){
       formRugasT[0].style.display = 'none'
+      formCamada[0].style.display = 'block'
+      
    }
 }
+
+/*Get de radios*/
+function carregar(){
+   var fregiao = document.getElementsByName('regiao')
+   var faltura = document.getElementsByName('altura')
+   var fprop = document.getElementsByName('propagacao')
+   var ftempo = document.getElementsByName('operacao')
+   var ftam = document.getElementsByName('tamanho')
+   var fluz = document.getElementsByName('luz')
+   var laudo = document.getElementById('laudo')
+ 
+/*---------------------------------------------------------*/
+   
 /*Condicionais para Rugas - Longitudinal*/
 
-
-
 /*Condicionais para rugas  Transversais*/
-function carregar(){
-    var fregiao = document.getElementsByName('regiao')
-    var faltura = document.getElementsByName('altura')
-    var fprop = document.getElementsByName('propagacao')
-    var ftempo = document.getElementsByName('operacao')
-    var ftam = document.getElementsByName('tamanho')
-    var fluz = document.getElementsByName('luz')
-    var laudo = document.getElementById('laudo')
+
 
  if(fregiao[1].checked && faltura[0].checked ){
     laudo.innerHTML = `Severidade 0` 
@@ -37,7 +44,7 @@ function carregar(){
     laudo.innerHTML = `Severidade 5`
  }
 
- } 
+ 
 
 /*Condicionais para Rugas - Almas*/
 /*Condicionais para Gap ou Ausência de Core - Cascas e Almas*/
@@ -65,4 +72,7 @@ function carregar(){
 /*Condicionais para Furos no laminado - Inserto do BF	*/
 /*Condicionais para Ausência de camada (Preform) - LE/TE - Casca	*/
 /*Condicionais para Camada contaminada	*/
-
+if(ftempo[0].checked && fprop[1].checked){
+   laudo.innerHTML = `Severidade 1`
+}
+}
