@@ -2,12 +2,32 @@
 function selected(value){
    var formRugasT = document.getElementsByClassName('form1')
    var formCamada = document.getElementsByClassName('form2')
-   if(value == "Rugas - Transversais"){
+   var formAusenciaCamada = document.getElementsByClassName('form3')
+   var formFurosInsert = document.getElementsByClassName('form4')
+
+   if(value =="Rugas - Transversais"){
+      formFurosInsert[0].style.display = 'none'
+      formCamada[0].style.display = 'none'
       formRugasT[0].style.display = 'block'
+      formAusenciaCamada[0].style.display = 'none'
    } else if(value == "Camada contaminada"){
+      formAusenciaCamada[0].style.display = 'none'
       formRugasT[0].style.display = 'none'
       formCamada[0].style.display = 'block'
+      formFurosInsert[0].style.display = 'none'
       
+   }else if(value =="Ausência de camada (Preform) - LE/TE - Casca")
+   {
+      formAusenciaCamada[0].style.display = 'block'
+      formRugasT[0].style.display = 'none'
+      formCamada[0].style.display = 'none'
+      formFurosInsert[0].style.display = 'none'
+   }else if(value =="Furos - Inserto do BF"){
+      formAusenciaCamada[0].style.display = 'none'
+      formRugasT[0].style.display = 'none'
+      formCamada[0].style.display = 'none'
+      formFurosInsert[0].style.display = 'block'
+
    }
 }
 
@@ -20,14 +40,20 @@ function carregar(){
    var ftam = document.getElementsByName('tamanho')
    var fluz = document.getElementsByName('luz')
    var laudo = document.getElementById('laudo')
+   var fprop1 = document.getElementsByName('propagacao1')
+   var ftempo1 = document.getElementsByName('operacao1')
+   var ftempo2 = document.getElementsByName('operacao2')
+   var fdesenv = document.getElementsByName('desenv')
+   var ftempo3 = document.getElementsByName('operacao3')
+   var fprop2 = document.getElementsByName('propagacao2')
+
+
  
 /*---------------------------------------------------------*/
    
 /*Condicionais para Rugas - Longitudinal*/
 
 /*Condicionais para rugas  Transversais*/
-
-
  if(fregiao[1].checked && faltura[0].checked ){
     laudo.innerHTML = `Severidade 0` 
  } else if(faltura[0].checked && fprop[1].checked){
@@ -43,8 +69,6 @@ function carregar(){
  } else if(fprop[0].checked && ftam[1].checked || fluz[0].checked){
     laudo.innerHTML = `Severidade 5`
  }
-
- 
 
 /*Condicionais para Rugas - Almas*/
 /*Condicionais para Gap ou Ausência de Core - Cascas e Almas*/
@@ -70,9 +94,21 @@ function carregar(){
 /*Condicionais para Camada rompida devido lixamento ou remoção de nylon	*/
 /*Condicionais para Furos no laminado - Casca	*/
 /*Condicionais para Furos no laminado - Inserto do BF	*/
+if(ftempo3[0].checked && fprop2[0].checked){
+   laudo.innerHTML= `Severidade 2`}
 /*Condicionais para Ausência de camada (Preform) - LE/TE - Casca	*/
-/*Condicionais para Camada contaminada	*/
-if(ftempo[0].checked && fprop[1].checked){
-   laudo.innerHTML = `Severidade 1`
+if(ftempo2[0].checked && fdesenv[1]){
+   laudo.innerHTML = `Severidade 2`
 }
+/*Condicionais para Camada contaminada	*/
+if(ftempo1[0].checked && fprop1[1].checked){
+   laudo.innerHTML = `Severidade 1`
+}else if(ftempo1[1].checked || fprop1[0].checked){
+   laudo.innerHTML  = ` Severidade 3`
+}
+}
+/*Func para redefinir as marcações recarregando a pagina*/
+function redefinir(){
+   window.location.reload(true);
+
 }
