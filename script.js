@@ -4,32 +4,60 @@ function selected(value){
    var formCamada = document.getElementsByClassName('form2')
    var formAusenciaCamada = document.getElementsByClassName('form3')
    var formFurosInsert = document.getElementsByClassName('form4')
+   var formFurolam = document.getElementsByClassName('form5')
+   var formCamadaRomp = document.getElementsByClassName('form6')
 
    if(value =="Rugas - Transversais"){
+      formRugasT[0].style.display = 'block'
       formFurosInsert[0].style.display = 'none'
       formCamada[0].style.display = 'none'
-      formRugasT[0].style.display = 'block'
-      formAusenciaCamada[0].style.display = 'none'
+     /*formAusenciaCamada[0].style.display = 'none'*/
+      formFurolam[0].style.display = 'none'
+      formCamadaRomp[0].style.display = 'none'
    } else if(value == "Camada contaminada"){
-      formAusenciaCamada[0].style.display = 'none'
-      formRugasT[0].style.display = 'none'
       formCamada[0].style.display = 'block'
+       /*formAusenciaCamada[0].style.display = 'none'*/
+      formRugasT[0].style.display = 'none'
       formFurosInsert[0].style.display = 'none'
+      formFurolam[0].style.display = 'none'
+      formCamadaRomp[0].style.display = 'none'
       
-   }else if(value =="Ausência de camada (Preform) - LE/TE - Casca")
+   /*}else if(value =="Ausência de camada (Preform) - LE/TE - Casca")
    {
       formAusenciaCamada[0].style.display = 'block'
       formRugasT[0].style.display = 'none'
       formCamada[0].style.display = 'none'
       formFurosInsert[0].style.display = 'none'
-   }else if(value =="Furos - Inserto do BF"){
-      formAusenciaCamada[0].style.display = 'none'
+      formFurolam[0].style.display = 'none'
+      formCamadaRomp[0].style.display = 'none'*/
+   }
+   else if(value =="Furos - Inserto do BF"){
+      formFurosInsert[0].style.display = 'block'
+      /*formAusenciaCamada[0].style.display = 'none'*/
       formRugasT[0].style.display = 'none'
       formCamada[0].style.display = 'none'
-      formFurosInsert[0].style.display = 'block'
+      formFurolam[0].style.display = 'none'
+      formCamadaRomp[0].style.display = 'none'
 
    }
+   else if(value =="Furos no laminado - Casca"){
+      formFurolam[0].style.display = 'block'
+      /*formAusenciaCamada[0].style.display = 'none'*/
+      formRugasT[0].style.display = 'none'
+      formCamada[0].style.display = 'none'
+      formFurosInsert[0].style.display = 'none'
+      formCamadaRomp[0].style.display = 'none'
+      
+}  /*else if(value =="Camada rompida devido lixamento ou remocao de nylon"){
+      formCamadaRomp[0].style.display = 'block'
+      formFurolam[0].style.display = 'none'
+      /*formAusenciaCamada[0].style.display = 'none'
+      formRugasT[0].style.display = 'none'
+      formCamada[0].style.display = 'none'
+      formFurosInsert[0].style.display = 'none'*/
+   
 }
+
 
 /*Get de radios*/
 function carregar(){
@@ -46,6 +74,8 @@ function carregar(){
    var fdesenv = document.getElementsByName('desenv')
    var ftempo3 = document.getElementsByName('operacao3')
    var fprop2 = document.getElementsByName('propagacao2')
+   var ftempo4 = document.getElementsByName('operacao4')
+   var fprop3 = document.getElementsByName('propagacao3')
 
 
  
@@ -92,17 +122,26 @@ function carregar(){
 /*Condicionais para LPS/LCTU - Root Chamber	*/
 /*Condicionais para Danos ocasionados por raios/queimados/Flashover	*/
 /*Condicionais para Camada rompida devido lixamento ou remoção de nylon	*/
-/*Condicionais para Furos no laminado - Casca	*/
-/*Condicionais para Furos no laminado - Inserto do BF	*/
-if(ftempo3[0].checked && fprop2[0].checked){
+/*Condicionais para Furos no laminado - Casca*/	
+
+if(ftempo4[0].checked && fprop3[1].checked){
    laudo.innerHTML= `Severidade 2`}
-/*Condicionais para Ausência de camada (Preform) - LE/TE - Casca	*/
+else if(ftempo4[1].checked && fprop3[1].checked){
+   laudo.innerHTML= `Severidade 3`}
+
+/*Condicionais para Furos no laminado - Inserto do BF	*/
+if(ftempo3[0].checked && fprop2[1].checked){
+   laudo.innerHTML= `Severidade 2`}
+else if(fprop2[0].checked){
+   laudo.innerHTML= `Severidade 3`
+}
+/*Condicionais para Ausência de camada (Preform) - LE/TE - Casca	
 if(ftempo2[0].checked && fdesenv[1]){
    laudo.innerHTML = `Severidade 2`
-}
+}*/
 /*Condicionais para Camada contaminada	*/
 if(ftempo1[0].checked && fprop1[1].checked){
-   laudo.innerHTML = `Severidade 1`
+   laudo.innerHTML = `Severidade 2`
 }else if(ftempo1[1].checked || fprop1[0].checked){
    laudo.innerHTML  = ` Severidade 3`
 }

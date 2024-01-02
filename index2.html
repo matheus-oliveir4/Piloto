@@ -10,7 +10,7 @@
     <header><h1>
         Analisador de criterios</h1>
         <select name="defeitos" id="txtdefeitos" class="selectAll" onclick="selected(this.value)">
-            <option value="Não conformidades" selected>Não conformidades</option>
+            <option value="Não conformidades" selected="">Não conformidades</option>
             <option value="Rugas - Longitudinal"><p>Rugas - Longitudinal</p></option>
             <option value="Rugas - Transversais"><p>Rugas - Transversais</p></option>
             <option value="Rugas - Almas"><p>Rugas - Almas</p></option>
@@ -34,7 +34,7 @@
             <option value="Delaminações - T-pultrudado	"><p>Delaminações - T-pultrudado</p></option>
             <option value="LPS/LCTU - Root Chamber"><p>LPS/LCTU - Root Chamber	</p></option>
             <option value="Danos ocasionados por raios/queimados/Flashover"><p>Danos ocasionados por raios/queimados/Flashover</p></option>
-            <option value="Camada rompida devido lixamento ou remocao de nylon"><p>Camada rompida devido lixamento ou remoção de nylon</p></option>
+            <option value="Camada rompida devido lixamento ou remoção de nylon"><p>Camada rompida devido lixamento ou remoção de nylon</p></option>
             <option value="Furos no laminado - Casca"><p>Furos no laminado - Casca</p></option>
             <option value="Furos - Inserto do BF"><p>Furos no laminado - Inserto do BF</p></option>
             <option value="Ausência de camada (Preform) - LE/TE - Casca"><p>Ausência de camada (Preform) - LE/TE - Casca</p></option>
@@ -116,24 +116,9 @@
                 <label for="txtprop1.2">Sem sinais</label>
             </section>
         </form>
-        <!--<form name="form3" method="post" class="form3">
-            <section>
-                <h3>Qual tempo de operação da pá?</h3>
-                <input type="radio"  name="operacao2" id="txttempo1.3" required>
-                <label for="txttempo1.3">Maior que 1 ano</label>
-                <br>
-                <input type="radio"  name="operacao2" id="txttempo1.4" required>
-                <label for="txttempo1.4">Menor que 1 ano</label>
-            <section>
-                <h3>Possui sinais de desenvolvimento de dano?</h3>
-                <input type="radio"  name="desenv" id="txtdesenv" required>
-                <label for="txtdesenv">Possui sinais</label>
-                <br>
-                <input type="radio"  name="desenv" id="txtdesenv1" required>
-                <label for="txtdesenv1">Não possui sinais</label>
-            </section>
+        <br>
 
-        </form> -->
+
         <form  name="form4" method="post" class="form4">
             <section>
                 <h3>Qual tempo de operação da pá?</h3>
@@ -166,19 +151,20 @@
                 </section>
         
                 <section>
-                    <h3>Existem  sinais de evolução?</h3>
+                    <h3>Existem  sinais de desenvolvimento do dano?</h3>
                     <input type="radio"  name="propagacao3" id="txtprop1.6" required>
                     <label for="txtprop1.6">Com sinais</label>
                     <br>
                     <input type="radio"  name="propagacao3" id="txtprop1.7" required>
                     <label for="txtprop1.7">Sem sinais</label>
                 </section>
+            </section>
         </form>
-        <br>
+
         <form name="form6"  method="post" class="form6">
             <section>
                 <section>
-                    <h3>Qual tempo de operação da pá?</h3>
+                    <h3>Qual tempo de operação da pá??</h3>
                     <input type="radio"  name="operacao5" id="txttempo1.9" required>
                     <label for="txttempo1.9">Maior que 1 ano</label>
                     <br>
@@ -196,15 +182,15 @@
                 </section>
         </form>
     
-    </main>
-        <aside>
-            <br>
-            <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
-            <input type="submit" id="redefinir" value="Redefinir" onclick="redefinir()">
-            <div id="laudo"> Disposição:</div>
-        </aside>
         
-    
-    <script src="script.js"></script>
+    </main>
+
+    <aside>
+        <br>
+        <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
+        <input type="submit" id="redefinir" value="Redefinir" onclick="redefinir()">
+        <div id="laudo"> Disposição:</div>
+    </aside>
+       <script src="script.js"></script> 
 </body>
-</html>
+    </html>
