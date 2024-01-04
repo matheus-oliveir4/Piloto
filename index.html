@@ -9,6 +9,9 @@
 <body>
     <header><h1>
         Analisador de criterios</h1>
+        
+    </header>
+    <main>
         <select name="defeitos" id="txtdefeitos" class="selectAll" onclick="selected(this.value)">
             <option value="Não conformidades" selected>Não conformidades</option>
             <option value="Rugas - Longitudinal"><p>Rugas - Longitudinal</p></option>
@@ -40,8 +43,6 @@
             <option value="Ausência de camada (Preform) - LE/TE - Casca"><p>Ausência de camada (Preform) - LE/TE - Casca</p></option>
             <option value="Camada contaminada"><p>Camada contaminada</p></option>    
         </select>
-    </header>
-    <main>
         <form name="form1" method="post" class="form1">  
             <section class="SecRegiao">
                 <h3>Em qual região a ruga se encontra?</h3>
@@ -195,15 +196,12 @@
                     <label for="txtprop1.9">Sem sinais</label>
                 </section>
         </form>
-    
     </main>
-        <aside>
-            <br>
-            <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
-            <input type="submit" id="redefinir" value="Redefinir" onclick="redefinir()">
-            <div id="laudo"> Disposição:</div>
-        </aside>
-        
+    <aside>     
+        <input type="submit" id="analisar" value="Analisar" onclick="carregar()">
+        <input type="submit" id="redefinir" value="Redefinir" onclick="redefinir()">
+        <div id="laudo"></div>
+    </aside>
     
     <script src="script.js"></script>
 </body>

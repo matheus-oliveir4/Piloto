@@ -1,2 +1,44 @@
 form{
-    display: none}
+    display: none;
+}
+body{
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    background-color: rgb(88, 184, 240);
+
+}
+select{
+    margin-left: 20%;
+    width: 250px;
+    border:  2px solid rgb(0, 153, 255);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px;
+}
+
+main{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    translate: -50%;
+    min-width: 400px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: justify;
+    background-color: rgba(235, 229, 222, 0.219);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.384);
+    
+}
+aside{
+   margin-top: 750px;
+}
+aside > input{
+    border-radius: 5px;
+    background-color: rgba(143, 199, 236, 0.719);
+    box-shadow: 2px 2px 2px;
+}
+aside > div {
+    margin-top: 10px;
+}
